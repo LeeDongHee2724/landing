@@ -15,8 +15,11 @@
             if(isAndroid()) {
                 location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
             } else if(isIos()) {
-                // if IOS -> open naver.com (if 앱이 설치 되어 있으면 앱으로 이동(앱 호출 스키마 전달)  otherwise 앱스토어 링크 전달)
-                window.open("http://naver.com");
+                var url = "coffeebeanapp://";
+                setTimeout( function() {
+		            window.open("https://apps.apple.com/app/id1482718354");
+	            }, 1000);
+            	location.href = url;
             } else{
                 console.log("pc");
                 window.open("http://google.com");
