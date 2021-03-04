@@ -11,24 +11,77 @@
 </head>
 <script>
     $(document).ready(function() {
+        // 디바이스 종류 설정
+        var pc_device = "win16|win32|win64|mac|macintel";
+ 
+        // 접속한 디바이스 환경
+        var this_device = navigator.platform;
 
-        console.log('aaaa');
-
-        // PC or Mobile
-
-        // If Mobile
-
-        // is IOS or is AOS
-
-        // if IOS -> open naver.com
-
-        // if AOS -> open daum.net
+        $("#logoImg").click(function() {
+            if(this_device) {
+            // If Mobile
+            if(pc_device.indexOf(navigator.platform.toLowerCase()) < 0 ) {
+                console.log('MOBILE');
+                // is IOS or is AOS
+                if(this_device.isAndroid()) {
+                    // if AOS -> open daum.net
+                    window.open("daum.net");
+                } else if(this_device.isIos()) {
+                    // if IOS -> open naver.com (if 앱이 설치 되어 있으면 앱으로 이동(앱 호출 스키마 전달)  otherwise 앱스토어 링크 전달)
+                    window.open("naver.com");
+                }
+            } else {
+                console.log('PC');
+            }
+        }
+        });
     });
+
+    /**
+    * 디바이스 타입 검사
+    * @return {string} Os String
+    */
+    function deviceType() {
+	    let device= "";
+	    let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+	    if(userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i )){
+	        device= 'ios';
+	    } else if( userAgent.match( /Android/i ) ){
+	        device= 'android';
+        }else{
+		    device= 'unknown';
+	    }
+	    return device;
+    }
+
+    /**
+    * 접속 OS Android 여부 검사
+    * @return {boolean}
+    */
+    function isAndroid() {
+        let type = deviceType();
+	    if(type != null && type === 'android') {
+		    return true;
+	    }
+	    return false;
+    }
+
+    /**
+    * 접속 OS iOS 여부 검사
+    * @return {boolean}
+    */
+    function isIos() {
+	    let type = deviceType();
+	    if(type != null && type === 'ios') {
+		    return true;
+	    }
+	    return false;
+    }
 </script>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="resource/img/coffeebean_logo.png" alt="" />
+        <div class="logo" >
+            <img src="resource/img/coffeebean_logo.png" alt="" id="logoImg" />
         </div>
         <div class="name">
             <p>커피빈</p>
