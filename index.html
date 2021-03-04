@@ -11,29 +11,18 @@
 </head>
 <script>
     $(document).ready(function() {
-        // 디바이스 종류 설정
-        var pc_device = "win16|win32|win64|mac|macintel";
- 
-        // 접속한 디바이스 환경
-        var this_device = navigator.platform;
-
         $("#logoImg").click(function() {
-            if(this_device) {
-            // If Mobile
-            if(pc_device.indexOf(navigator.platform.toLowerCase()) < 0 ) {
-                console.log('MOBILE');
-                // is IOS or is AOS
-                if(this_device.isAndroid()) {
-                    // if AOS -> open daum.net
-                    window.open("daum.net");
-                } else if(this_device.isIos()) {
-                    // if IOS -> open naver.com (if 앱이 설치 되어 있으면 앱으로 이동(앱 호출 스키마 전달)  otherwise 앱스토어 링크 전달)
-                    window.open("naver.com");
-                }
-            } else {
-                console.log('PC');
+            // is IOS or is AOS
+            if(isAndroid()) {
+                // if AOS -> open daum.net
+                window.open("http://daum.net");
+            } else if(isIos()) {
+                // if IOS -> open naver.com (if 앱이 설치 되어 있으면 앱으로 이동(앱 호출 스키마 전달)  otherwise 앱스토어 링크 전달)
+                window.open("http://naver.com");
+            } else{
+                console.log("pc");
+                window.open("http://google.com");
             }
-        }
         });
     });
 
