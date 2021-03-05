@@ -20,6 +20,7 @@
         if(isAndroid()) {
             location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
         } else if(isIos()) {
+            let visiteTm = ( new Date() ).getTime();
             setTimeout( function () { 
                 if ( ( new Date() ).getTime() - visiteTm < 3000 ) { 
                     // 앱스토어 이동 
