@@ -20,34 +20,24 @@
         if(isAndroid()) {
             location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
         } else if(isIos()) {
-            let visiteTm = ( new Date() ).getTime();
-            setTimeout( function () { 
-                if ( ( new Date() ).getTime() - visiteTm < 3000 ) { 
+            let visiteTm = (new Date()).getTime();
+            setTimeout(function() { 
+                if((new Date()).getTime() - visiteTm < 3000) { 
                     // 앱스토어 이동 
                     location.href = "https://itunes.apple.com/app/id1482718354"; 
                 } 
-            } ,2500 );
-            setTimeout( function () { 
+            } ,2500);
+            setTimeout(function() {
                 // 앱실행 
                 location.href = "coffeebeanapp02100://"; 
             } ,0 );
-
-
-            // var now = new Date().valueOf();
-            // setTimeout(function () {
-            //     if (new Date().valueOf() - now > 100) {
-            //         return;
-            //     }
-            //     location.href = "https://itunes.apple.com/app/id1482718354";
-            // }, 25);
-            // window.location.href = "coffeebeanapp://";
         } else{
             //  QR코드 노출
             $("#qr_code").show();
-            $("#google_play").click(function(){
-                location.href="https://play.google.com/store/apps/details?id=com.coffeebeankorea.purpleorder";
+            $("#google_play").click(function() {
+                location.href = "https://play.google.com/store/apps/details?id=com.coffeebeankorea.purpleorder";
             });
-            $("#app_store").click(function(){
+            $("#app_store").click(function() {
                 location.href = "https://itunes.apple.com/app/id1482718354";
             });
             console.log("pc");
@@ -59,14 +49,14 @@
     * @return {string} Os String
     */
     function deviceType() {
-	    let device= "";
+	    let device = "";
 	    let userAgent = navigator.userAgent || navigator.vendor || window.opera;
 	    if(userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-	        device= 'ios';
+	        device = "ios";
 	    } else if( userAgent.match(/Android/i)) {
-	        device= 'android';
+	        device = "android";
         } else {
-		    device= 'unknown';
+		    device = "unknown";
 	    }   
 	    return device;
     }
