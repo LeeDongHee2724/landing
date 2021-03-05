@@ -18,15 +18,15 @@
         $("#qr_code").hide();
         // Android, IOS, PC 구분
         if(isAndroid()) {
-            location.href = "Intent://register#Intent;scheme=coffeebeanapp02100;package=com.coffeebeankorea.purpleorder;end";
+            location.href = "Intent://purple_aos#Intent;scheme=mypurpleorder;package=com.coffeebeankorea.purpleorder;end";
         } else if(isIos()) {
             let visiteTm = (new Date()).getTime();
             setTimeout(function() { 
-                if((new Date()).getTime() - visiteTm < 3000) { 
+                if((new Date()).getTime() - visiteTm < 1000) { 
                     // 앱스토어 이동 
                     location.href = "https://itunes.apple.com/app/id1482718354"; 
                 } 
-            } ,2500);
+            } ,500);
             setTimeout(function() {
                 // 앱실행 
                 location.href = "coffeebeanapp02100://"; 
