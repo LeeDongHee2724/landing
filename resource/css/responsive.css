@@ -5,7 +5,7 @@
 
     .container .logo img{
         width: 100px;
-        margin-top: 100px;
+        margin-top: 300px;
     }
 
     .container .name {
@@ -17,7 +17,7 @@
     }
     
     .container .store_link {
-        margin-top: 50px;
+        margin-top: 100px;
     }
 
     .container .store_link .ios {
@@ -32,9 +32,5 @@
     .container .store_link .android img {
         width: 150px;
         height: 40px;
-    }
-
-    .container .qr img {
-        display: none;
     }
 }
