@@ -54,3 +54,8 @@ body {
     width: 230px;
     height: 70px;
 }
+
+.container .qr img {
+    width: 200px;
+    margin-top: 120px;
+}
