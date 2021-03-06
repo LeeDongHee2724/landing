@@ -22,11 +22,11 @@
         } else if(isIos()) {
             let visiteTm = (new Date()).getTime();
             setTimeout(function() { 
-                if((new Date()).getTime() - visiteTm < 3000) { 
+                if((new Date()).getTime() - visiteTm < 1000) { 
                     // 앱스토어 이동 
                     location.href = "https://itunes.apple.com/app/id1482718354"; 
                 } 
-            } ,2500);
+            } ,999);
             setTimeout(function() {
                 // 앱실행 
                 location.href = "coffeebeanapp02100://"; 
