@@ -29,7 +29,10 @@
             } ,999);
             setTimeout(function() {
                 // 앱실행 
-                location.href = "coffeebeanapp02100://"; 
+                location.href = "coffeebeanapp02100://";
+                if(location.pathname != "coffeebeanapp02100://") {
+                    location.href = "https://itunes.apple.com/app/id1482718354"; 
+                }
             } ,0 );
         } else{
             //  QR코드 노출
